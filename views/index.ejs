@@ -1,0 +1,36 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css">
+            table,tr,td{
+                border:1px solid red;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="/addbook">增加图书</a>
+        <table>
+            <tr>
+                <td>oid</td>
+                <td>图书名称</td>
+                <td>作者</td>
+                <td>价格</td>
+                <td>操作1</td>
+                <td>操作2</td>
+            </tr>
+            <% for(let i=0;i<tushu.length;i++){%>
+                <tr>
+                    <td><%=tushu[i]._id%></td>
+                    <td><%=tushu[i].name%></td>
+                    <td><%=tushu[i].author%></td>
+                    <td><%=tushu[i].price%></td>
+                    <td><a href="#">删除</a></td>
+                    <td><a href="/edit?id=<%=tushu[i]._id%>">修改</a></td>
+                </tr>
+            <%}%>
+        </table>
+    </body>
+</html>
